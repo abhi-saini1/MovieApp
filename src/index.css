@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Barlow' sans-serif;
+}
+
+:root{
+  /* colors */
+  --black-color:#000000;
+  --red-color: #b9173a;
+  --white-color: #fff5f9;
+  --brown-color: #28161c;
+  --gray-color: #808080;
+}
+h1{
+  font-size: 3.75rem;
+}
+h2{
+  font-size: 2.75rem;
+}
+h3{
+  font-size: 1.75rem;
+}
+h4{
+  font-size: 1.5rem;
+}
+h5{
+  font-size: 1.25rem;
+}
+h6{
+  font-size: 1.125rem;
+}
+p{
+  font-size: 1rem;
+  line-height: 24px;
+}
+span{
+  font-size: .875rem;
+  line-height: 20px;
+}
+.wrapper{
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+.btn{
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  overflow: hidden;
+  color: var(--white-color);
+  background-color: var(--red-color);
+  border: 1px solid var(--red-color);
+  box-shadow: 6px 6px 12px #c5c5c5 -6px -6px 12px #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-weight: 600;
+}
+
+.btn-1{
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--black-color);
+  border: 1px solid var(--white-color);
+  box-shadow: 6px 6px 12px #c5c5c5 -6px -6px 12px #ffffff;
+}
+a{
+  text-decoration: none;
+}
