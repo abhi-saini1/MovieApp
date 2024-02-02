@@ -16,13 +16,7 @@ const Home = () => {
               <Link to='' className='btn-1'>Show Plans</Link>
             </div>
           </div>
-          <div className='col-lg-6'>
-            <div className='play-btn'>
-              <button>
-                  <FaPlay/>
-              </button>
-            </div>
-          </div>
+          
         </Row>
       </Container>
     </div>

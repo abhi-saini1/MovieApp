@@ -10,28 +10,60 @@
     font-weight: 700;
 }
 .home-section p{
-    color: var(--gray-color);
+    color: var(--white-color);
     font-weight: 500;
 }
 .home-section .home-btn{
    display: flex;
    gap: 20px;
 }
-.home-section .play-btn{
-    position: absolute;
-    right: 50px;
-    top: 90%;
-}
-.home-section .play-btn button{
-    padding: 28px 30px;
-    border-radius: 100%;
-    border: none;
-    background: var(--red-color);
-    color: var(--white-color);
-    border: 1px solid  var(--white-color);
-    align-items: center;
-    justify-content: center;
-}
+
 .home-section .play-btn button svg{
     font-size: 24px;
+}
+
+@media (max-width: 991px) {
+    .home-section{
+        align-items: center;
+        justify-content: center;
+    }
+    .home-section h2{
+        text-align: center;
+    }
+    .home-section p{
+        text-align: center;
+        color: var(--white-color);
+    }
+    .home-section .home-btn{
+        justify-content: center;
+        align-items: center;
+    }
+    .home-section .home-btn .btn{
+        padding: 10px 20px;
+    }
+    .home-section .home-btn .btn-1{
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 391px){
+    .home-section h2{
+        text-align: center;
+        font-size: 24px;
+    }
+    .home-section p{
+        text-align: center;
+        color: var(--white-color);
+        font-size: 12px;
+    }
+    .home-section .home-btn{
+        justify-content: center;
+        align-items: center;
+    }
+    .home-section .home-btn .btn{
+        padding: 8px 12px;
+    }
+    .home-section .home-btn .btn-1{
+        padding: 8px 12px;
+    }
 }
