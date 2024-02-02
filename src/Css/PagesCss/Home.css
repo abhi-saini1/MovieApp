@@ -1,69 +1,80 @@
-.home-section{
+.banner-section{
+    background: url('../../assets/bg.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;  
     padding-top: 10vw;
-    padding-bottom: 5vw;
-    position: relative;
+    padding-bottom: 5vw; 
 }
-.home-section h2{
+.banner-section h2{
     color: var(--white-color);
     font-size: 5vw;
     letter-spacing: 1px;
     font-weight: 700;
 }
-.home-section p{
+.banner-section p{
     color: var(--white-color);
     font-weight: 500;
 }
-.home-section .home-btn{
+.banner-section .home-btn{
    display: flex;
    gap: 20px;
 }
 
-.home-section .play-btn button svg{
+.banner-section .play-btn button svg{
     font-size: 24px;
 }
 
 @media (max-width: 991px) {
-    .home-section{
+    .banner-section{
         align-items: center;
         justify-content: center;
+        padding-top: 30vw;
     }
-    .home-section h2{
+    .banner-section h2{
         text-align: center;
     }
-    .home-section p{
+    .banner-section p{
         text-align: center;
         color: var(--white-color);
     }
-    .home-section .home-btn{
+    .banner-section .home-btn{
         justify-content: center;
         align-items: center;
     }
-    .home-section .home-btn .btn{
+    .banner-section .home-btn .btn{
         padding: 10px 20px;
     }
-    .home-section .home-btn .btn-1{
+    .banner-section .home-btn .btn-1{
         padding: 10px 20px;
     }
 }
 
 @media (max-width: 391px){
-    .home-section h2{
+    .banner-section{
+        padding-top: 30vw;
+       
+    }
+    .banner-section h2{
         text-align: center;
         font-size: 24px;
     }
-    .home-section p{
+    .banner-section p{
         text-align: center;
         color: var(--white-color);
         font-size: 12px;
     }
-    .home-section .home-btn{
+    .banner-section .home-btn{
         justify-content: center;
         align-items: center;
     }
-    .home-section .home-btn .btn{
+    .banner-section .home-btn .btn{
         padding: 8px 12px;
     }
-    .home-section .home-btn .btn-1{
+    .banner-section .home-btn .btn-1{
         padding: 8px 12px;
     }
 }

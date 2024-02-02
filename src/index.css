@@ -79,3 +79,7 @@ span{
 a{
   text-decoration: none;
 }
+.section-wrapper{
+  padding-top: 80px;
+  padding-bottom: 60px;
+}

@@ -1,10 +1,6 @@
-body{
-    background: url('../../assets/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-  }
+.navbar{
+  background-color: black;
+}
  .navbar .navbar-brand h3{
   color: var(--white-color);
   font-weight: 700;
@@ -26,8 +22,9 @@ body{
   position: relative;
 }
 .navbar .search-box form input{
-  width: 200px;
+  width: 250px;
   padding: 10px 0px 10px 40px;
+  color: var(--white-color);
   border-radius: 9999px;
   border: 1px solid var(--white-color);
   transition: all .2s ease-in-out;
@@ -35,7 +32,7 @@ body{
   background: transparent;
 }
 .navbar .search-box form input::placeholder{
-  color: var(--black-color);
+  color: var(--white-color);
   font-size: 16px;
   font-weight: 500;
 }
@@ -45,15 +42,13 @@ body{
   right: 10px;
   transform: translate(0, -50%);
 }
-.navbar .search-box form input:focus{
- background: var(--white-color);
-  width: 250px;
+.navbar .search-box .search-icon svg{
+  color: var(--white-color);
 }
+
 @media (max-width: 991px) {
-  body{
-    background-position: center;
-    padding-top: 40px;
-    padding-bottom: 20px;
+  .navbar{
+    padding: 30px 0;
   }
   .navbar .navbar-nav .nav-link{
    text-align: center;
@@ -70,12 +65,9 @@ body{
   .navbar .search-box form input{
     width: 170px;
     padding: 8px 0px 8px 30px;
+    color: var(--white-color);
   }
-  .navbar .search-box form input::placeholder{
-    color: var(--black-color);
-    font-size: 16px;
-    font-weight: 500;
-  }
+  
   .navbar .search-box .search-icon {
     position: relative;
     top: 50%;
@@ -83,20 +75,17 @@ body{
     margin-top: 20px;
     transform: translate(0, -50%);
   }
-  .navbar .search-box .search-icon svg{
-    color: var(--black-color);
-  }
-  .navbar .search-box form input:focus{
-   background: var(--white-color);
-    width: 200px;
-    color: var(--black-color);
+  
+  .navbar .navbar-toggler{
+    background-color  : var(--white-color);
   }
   .navbar .navbar-toggler:focus{
     box-shadow: none;
     outline: none;
+    color: var(--white-color);
   }
    .navbar .navbar-toggler-icon{
     height: 2rem;
-    width: 2rem;
+    width: 2rem;  
 }
 }

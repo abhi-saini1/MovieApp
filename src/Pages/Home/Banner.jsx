@@ -1,0 +1,24 @@
+import React from 'react'
+import { Container,Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
+const Banner = () => {
+  return (
+    <div className='banner-section'>
+        <Container>
+        <Row>
+          <div className="col-lg-6">
+            <h2>Let's Make Your Own Cinema</h2>
+            <p>You can still enjoy the latest movies and other movies<br></br>online and at a lower price</p>
+            <div className='home-btn'>
+              <Link to='' className='btn'>Get Started</Link>
+              <Link to='' className='btn-1'>Show Plans</Link>
+            </div>
+          </div>
+        </Row>
+      </Container>
+    </div>
+  )
+}
+
+export default Banner
