@@ -1,73 +1,73 @@
 import React from 'react'
 import { useGlobalContext } from '../../Context/Context'
 import { Container, Row } from 'react-bootstrap'
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
-import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-// import {EffectCoverflow,Pagination,Navigation} from 'swiper';
+import { Autoplay } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 const title = 'Trending Movies'
 
 const Trending = () => {
-    const {Trendingmovie} = useGlobalContext()
-    console.log(Trendingmovie)
-  return (
-    <div className='Trending-section section-wrapper'>
-        <Container>
-            <Row>
-                <div className='col-lg-6'>
-                    <h3>{title}</h3>
-                </div>
-            </Row>
-            <Row>
-            <Swiper
-            effect={'cover-flow'}
-            grabCursor={true}
-            centeredSlides={true}
-            loop={true}
-            slidesPerView={'auto'}
-            coverflowEffect={{
-                rotate:0,
-                stretch:0,
-                depth:100,
-                modifier:2.5,
-            }}
-            pagination={{el:'.swiper-pagination',clickable:true}}
-            navigation={{
-                nextEl:'.swiper-button-next',
-                prevEl:'.swiper-button-prev',
-                clickable:true,
-            }}
-            // modules={[EffectCoverflow,Pagination,Navigation]}
-        className="swiper_container"
-      >
-                {Trendingmovie && Trendingmovie.map((Trend)=>(
-                    <SwiperSlide key='' className=''>
-                        <img src={`https://image.tmdb.org/t/p/w200${Trend.poster_path}`} alt=''/>
-                    </SwiperSlide>
-       
-       ))}
-       <div className="slider-controler">
-        <div className="swiper-button-prev slider-arrow">
-                <FaArrowLeft/>
-        </div>
-        <div className="swiper-button-next slider-arrow">
-                <FaArrowRight/>
-        </div>
-        <div className="swiper-pagination">
+    const { Trendingmovie } = useGlobalContext()
+    // console.log(Trendingmovie)
+    return (
+        <div className='Trending-section section-wrapper'>
+            <Container>
+                <Row>
+                    <div className='col-lg-6'>
+                        <h3>{title}</h3>
+                    </div>
+                </Row>
+                <Row className='mt-3'>
+                    <Swiper
+                       
+                        centeredSlides={true}
+                        loop={true}
+                        autoplay={{
+                            delay: 1000,
+                            disableOnInteraction: false,
+                          }}
+                        breakpoints={{
+                            640: {
+                              slidesPerView: 2,
+                              spaceBetween: 20,
+                            },
+                            768: {
+                              slidesPerView: 4,
+                              spaceBetween: 40,
+                            },
+                            1024: {
+                              slidesPerView: 4,
+                              spaceBetween: 30,
+                            },
+                          }}
+                       
+                        grabCursor={true}
+                        modules={[Autoplay]}
+                        className="mySwiper"
+                      >
+                        { Trendingmovie.map((Trend,i) => (
+                            <SwiperSlide key={i}>
+                                
+                                <div className='Trending-content'>
+                                    <Link to=''>
+                                    <img src={`https://image.tmdb.org/t/p/w200${Trend.poster_path}`} alt=''  />
+                                    </Link>
+                                </div>
+                                
 
+                            </SwiperSlide>
+
+                        ))}
+                    </Swiper>
+
+
+                </Row>
+            </Container>
         </div>
-       </div>
-      </Swiper>
-                   
-                
-            </Row>
-        </Container>
-    </div>
-  )
+    )
 }
 
 export default Trending

@@ -1,3 +1,5 @@
+/* Home Page Css  */
+/* banner  */
 .banner-section{
     background: url('../../assets/bg.jpg');
     background-position: top center;
@@ -26,6 +28,50 @@
 
 .banner-section .play-btn button svg{
     font-size: 24px;
+}
+
+/* Trending  */
+.Trending-section h3{
+    color: var(--white-color);
+}
+.Trending-section .swiper{
+    width: 100%;
+    height: 100%;
+}
+.Trending-section .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.Trending-section .Trending-content img{
+    height:  350px;
+    width: 250px;
+}
+
+/* Rated  */
+.Rated-section h3{
+    color: var(--white-color);
+}
+.Rated-section .rating-content img{
+    width: 220px;
+    height: 350px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.Rated-section .rating-content{
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.Rated-section .rating-content:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705) ;
 }
 
 @media (max-width: 991px) {
