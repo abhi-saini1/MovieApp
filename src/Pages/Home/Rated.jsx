@@ -2,6 +2,7 @@ import React from 'react'
 import { useGlobalContext } from '../../Context/Context'
 import { Container,Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Pageination from '../../Components/Pageination'
 const title = 'Top Rated Movies'
 const Rated = () => {
     const {Ratedmovie} = useGlobalContext()
@@ -27,6 +28,7 @@ const Rated = () => {
                         </div>
                     ))
                 }
+                <Pageination/>
             </Row>
         </Container>
     </div>
