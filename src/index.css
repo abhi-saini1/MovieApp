@@ -80,6 +80,28 @@ span{
 a{
   text-decoration: none;
 }
+hr{
+  height: 1px;
+  width: 0;
+  background-color: var(--white-color);
+  border: 3px solid var(--white-color);
+  opacity: 1;
+  border-radius: 10px;
+  position: relative;
+  margin: 20px auto;
+  animation: line-width 2s ease-out forwards infinite;
+}
+@keyframes line-width {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 15%;
+  }
+  
+}
+
+
 .section-wrapper{
   padding-top: 80px;
   padding-bottom: 60px;

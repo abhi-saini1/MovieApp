@@ -1,5 +1,15 @@
 /* Header Css */
 @import './ComponentsCss/Header.css';
 
-/* home css */
-@import './PagesCss/Home.css'
+/* Pageination Css */
+@import './ComponentsCss/Pageination.css';
+
+/* home page css */
+@import './PagesCss/Home.css';
+
+/* Movies Page */
+@import './PagesCss/Movies.css';
+
+
+/* Footer Css */
+@import './ComponentsCss/Footer.css';

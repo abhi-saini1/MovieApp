@@ -24,8 +24,8 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-            <Nav.Link as={Link} to='/'>Discover</Nav.Link>
-            <Nav.Link as={Link} to='/'>Movie Release</Nav.Link>
+            <Nav.Link as={Link} to='/discover'>Discover</Nav.Link>
+            <Nav.Link as={Link} to='/movies'>Movies</Nav.Link>
           </Nav>
             <div className="search-box">
               <form action="">

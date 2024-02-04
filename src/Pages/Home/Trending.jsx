@@ -16,8 +16,9 @@ const Trending = () => {
         <div className='Trending-section section-wrapper'>
             <Container>
                 <Row>
-                    <div className='col-lg-6'>
+                    <div className='col-12'>
                         <h3>{title}</h3>
+                        <hr className='ball'/>
                     </div>
                 </Row>
                 <Row className='mt-3'>
@@ -53,7 +54,7 @@ const Trending = () => {
                                 
                                 <div className='Trending-content'>
                                     <Link to=''>
-                                    <img src={`https://image.tmdb.org/t/p/w200${Trend.poster_path}`} alt=''  />
+                                    <img src={`https://image.tmdb.org/t/p/original${Trend.poster_path}`} alt=''  />
                                     </Link>
                                 </div>
                                 

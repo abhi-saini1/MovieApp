@@ -8,9 +8,8 @@ const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${
 }`;
 
 const MovieProvider = ({ children }) => {
-    // Trending Movie
+  // Trending Movie
   const [Trendingmovie, setTrendingMovie] = useState([]);
-
 
   const fetchTrending = async () => {
     const response = await fetch(API_URL);
@@ -22,7 +21,6 @@ const MovieProvider = ({ children }) => {
     fetchTrending();
   }, []);
 
-  
   // TOP RATED MOVIE Api
   const [Ratedmovie, setRatedMovie] = useState([]);
   // pageination
@@ -51,6 +49,27 @@ const MovieProvider = ({ children }) => {
     setPage(page - 1);
   };
 
+  // Now Playing Movies
+  const [NowPlayingMovies, setNowPlayingMovies] = useState([]);
+  const [visible, setVisible] = useState(12);
+
+  const fetchNowPlayMovies = async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${
+        import.meta.env.VITE_API_KEY
+      }`
+    );
+    const nowplaydata = await response.json();
+    console.log(nowplaydata);
+    setNowPlayingMovies(nowplaydata.results);
+  };
+  useEffect(() => {
+    fetchNowPlayMovies();
+  }, []);
+
+  const handleSeeMore = () => {
+    setVisible((prevValue) => prevValue + 4);
+  };
   return (
     <MovieContext.Provider
       value={{
@@ -60,6 +79,9 @@ const MovieProvider = ({ children }) => {
         totalPages,
         nextPage,
         previousPage,
+        NowPlayingMovies,
+        handleSeeMore,
+        visible,
       }}
     >
       {children}

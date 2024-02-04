@@ -1,0 +1,33 @@
+.pageination-section{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.pageination-section .pageinate{
+  position: relative;
+  height: 40px;
+  box-shadow: 5px 5px 30px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+.pageination-section .pageinate li{
+    list-style: none;
+    display: inline-block;
+}
+.pageination-section .pageinate li a{
+    position: relative;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 500;
+}
+.pageination-section .pageinate li a:hover,
+.pageination-section .pageinate li a:active{
+    background: rgba(255,255,255,0.2);
+}
+.pageination-section span{
+    display: flex;
+    justify-content: end;
+    color: var(--white-color);
+}
