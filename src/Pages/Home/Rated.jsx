@@ -24,6 +24,7 @@ const Rated = () => {
                 className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex"
                 key={i}
               >
+                <Link to={`/moviesdetail/${Rated.id}`}> 
                 <div className="Rated-card">
                   <img
                     src={`https://image.tmdb.org/t/p/original${Rated.poster_path}`}
@@ -44,6 +45,7 @@ const Rated = () => {
                     </div>
                   </div>
                 </div>
+                </Link>
               </div>
             ))}
           </Row>

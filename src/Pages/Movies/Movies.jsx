@@ -31,7 +31,7 @@ const Movies = () => {
           NowPlayingMovies.map((nowplay, n) => (
             <SwiperSlide key={n}>
               <div className="nowplaying-banner">
-                <Link to="">
+                <Link to={`/moviesdetail/${nowplay.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/original/${nowplay.poster_path}`}
                     alt=""
@@ -52,7 +52,7 @@ const Movies = () => {
         <Row>
           {NowPlayingMovies.slice(0,visible).map((play, n) => (
             <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex" key={n}>
-             <Link>
+             <Link to={`/moviesdetail/${play.id}`}>
              <div className="nowplaying-card">
                 <img
                   src={`https://image.tmdb.org/t/p/original${play.poster_path}`}

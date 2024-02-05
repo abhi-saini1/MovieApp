@@ -53,7 +53,7 @@ const Trending = () => {
                             <SwiperSlide key={i}>
                                 
                                 <div className='Trending-content'>
-                                    <Link to=''>
+                                    <Link to={`/moviesdetail/${Trend.id}`}>
                                     <img src={`https://image.tmdb.org/t/p/original${Trend.poster_path}`} alt=''  />
                                     </Link>
                                 </div>

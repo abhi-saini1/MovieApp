@@ -10,6 +10,9 @@
 /* Movies Page */
 @import './PagesCss/Movies.css';
 
+/* Movies Details page */
+@import './PagesCss/MovieDetails.css';
+
 
 /* Footer Css */
 @import './ComponentsCss/Footer.css';
