@@ -6,6 +6,7 @@ import { MovieProvider } from './Context/Context'
 import Footer from './Components/Footer'
 import Movies from './Pages/Movies/Movies'
 import MovieDetail from './Pages/MoviesDetails/MovieDetail'
+import Discover from './Pages/Discover/Discover'
 const App = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const App = () => {
         <Header/>
         <Routes>
           <Route path='/' element={<Home/>}/> 
+          <Route path='/discover' element={<Discover/>}/> 
           <Route path='/movies' element={<Movies/>}/> 
           <Route path='/moviesdetail/:id' element={<MovieDetail/>}/> 
         </Routes> 

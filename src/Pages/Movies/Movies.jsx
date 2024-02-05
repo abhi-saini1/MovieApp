@@ -33,7 +33,7 @@ const Movies = () => {
               <div className="nowplaying-banner">
                 <Link to={`/moviesdetail/${nowplay.id}`}>
                   <img
-                    src={`https://image.tmdb.org/t/p/original/${nowplay.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/original/${nowplay.backdrop_path}`}
                     alt=""
                   />
                   <div className="nowplaying-content">

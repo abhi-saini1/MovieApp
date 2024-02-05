@@ -10,6 +10,8 @@
 /* Movies Page */
 @import './PagesCss/Movies.css';
 
+@import './PagesCss/Discover.css';
+
 /* Movies Details page */
 @import './PagesCss/MovieDetails.css';
 

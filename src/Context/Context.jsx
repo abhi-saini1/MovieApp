@@ -70,6 +70,24 @@ const MovieProvider = ({ children }) => {
   const handleSeeMore = () => {
     setVisible((prevValue) => prevValue + 4);
   };
+
+  // Upcoming movies
+  const [tvseriesmovies, setTvSeriesMovies] =useState([]);
+  const [upcomingVisible,setUpcomingVisible] = useState(12)
+
+  const fetchTvSeriesmovies = async () =>{
+    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_API_KEY}`);
+    const TvseriesData = await response.json();
+    // console.log(discoverData);
+    setTvSeriesMovies(TvseriesData.results);
+  }
+  useEffect(()=>(
+    fetchTvSeriesmovies()
+  ),[])
+
+  const upcomingHandle = ()=>{
+    setUpcomingVisible((prevValue)=> prevValue + 4)
+  }
   return (
     <MovieContext.Provider
       value={{
@@ -82,6 +100,9 @@ const MovieProvider = ({ children }) => {
         NowPlayingMovies,
         handleSeeMore,
         visible,
+        tvseriesmovies,
+        upcomingVisible,
+        upcomingHandle
       }}
     >
       {children}
