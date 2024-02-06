@@ -4,6 +4,9 @@
 /* Pageination Css */
 @import './ComponentsCss/Pageination.css';
 
+/* Search css */
+@import './ComponentsCss/Search.css';
+
 /* home page css */
 @import './PagesCss/Home.css';
 
