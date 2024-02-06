@@ -2,17 +2,17 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 const MovieContext = createContext();
 
-// Trending Movie api
-const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${
-  import.meta.env.VITE_API_KEY
-}`;
+
+
 
 const MovieProvider = ({ children }) => {
   // Trending Movie
   const [Trendingmovie, setTrendingMovie] = useState([]);
 
   const fetchTrending = async () => {
-    const response = await fetch(API_URL);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${
+      import.meta.env.VITE_API_KEY
+    }`);
     const data = await response.json();
     // console.log(data);
     setTrendingMovie(data.results);
@@ -88,6 +88,8 @@ const MovieProvider = ({ children }) => {
   const upcomingHandle = ()=>{
     setUpcomingVisible((prevValue)=> prevValue + 4)
   }
+
+
   return (
     <MovieContext.Provider
       value={{
@@ -102,7 +104,8 @@ const MovieProvider = ({ children }) => {
         visible,
         tvseriesmovies,
         upcomingVisible,
-        upcomingHandle
+        upcomingHandle,
+        
       }}
     >
       {children}
