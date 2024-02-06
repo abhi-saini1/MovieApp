@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Container,Row } from 'react-bootstrap';
+import { MdFormatListBulletedAdd } from "react-icons/md";
 
 const MovieDetail = () => {
     const [currentMovieDetail,setCurrentMovieDetail] = useState([]);
+    const [wishlist,setWishList] = useState([])
     const {id} = useParams();
     console.log(id);
 
@@ -12,11 +14,9 @@ const MovieDetail = () => {
             import.meta.env.VITE_API_KEY}`)
             .then((res)=> res.json())
             .then((data=> setCurrentMovieDetail(data)))
-
-            
           
     },[])
- 
+
     return (
     <div className='movie-detail'>
             <Container>
@@ -36,7 +36,8 @@ const MovieDetail = () => {
                                             <div className='movie_tagline'>{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
                                             <div className='movie_rating'>
                                                 {currentMovieDetail ? currentMovieDetail.vote_average : ""}
-                                                <span>{currentMovieDetail ? "(" + currentMovieDetail.vote_count +")votes" : ""}</span>
+                                                <span>{currentMovieDetail ? "(" + currentMovieDetail.vote_count +") votes" : ""}</span>
+                                                <Link><MdFormatListBulletedAdd/></Link>
                                             </div>
                                             <div className='movie_genres'>
                                                 {currentMovieDetail && currentMovieDetail.genres 
@@ -51,7 +52,8 @@ const MovieDetail = () => {
                                             </div>
                                             <div className='movie_description'>
                                                 <div className='synopsis'>Synopsis</div>
-                                                <div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
+                                                <div className='synopsis-text'>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
+                                            
                                             </div>
                                         </div>
                                 </div>
@@ -59,8 +61,10 @@ const MovieDetail = () => {
                     </div>
                 </Row>
                 
+                <Row>
+
+                </Row>
             </Container>
-        
     </div>
   )
 }

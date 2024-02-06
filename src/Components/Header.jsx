@@ -23,12 +23,11 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
             <Nav.Link as={Link} to='/discover'>Discover</Nav.Link>
             <Nav.Link as={Link} to='/movies'>Movies</Nav.Link>
           </Nav>
-            <Search/>
         </Navbar.Collapse>
       </Container>
     </Navbar>
