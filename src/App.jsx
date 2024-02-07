@@ -7,6 +7,7 @@ import Footer from './Components/Footer'
 import Movies from './Pages/Movies/Movies'
 import MovieDetail from './Pages/MoviesDetails/MovieDetail'
 import Discover from './Pages/Discover/Discover'
+import Search from './Pages/Search/Search'
 const App = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/discover' element={<Discover/>}/> 
           <Route path='/movies' element={<Movies/>}/> 
           <Route path='/moviesdetail/:id' element={<MovieDetail/>}/> 
+          <Route path='/search' element={<Search/>}/> 
         </Routes> 
         <Footer/>
         </MovieProvider>

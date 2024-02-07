@@ -4,8 +4,8 @@
 /* Pageination Css */
 @import './ComponentsCss/Pageination.css';
 
-/* Search css */
-@import './ComponentsCss/Search.css';
+@import './ComponentsCss/MovieCard.css';
+
 
 /* home page css */
 @import './PagesCss/Home.css';
@@ -13,11 +13,14 @@
 /* Movies Page */
 @import './PagesCss/Movies.css';
 
+/* discover page */
 @import './PagesCss/Discover.css';
 
 /* Movies Details page */
 @import './PagesCss/MovieDetails.css';
 
+/* Search page */
+@import './PagesCss/Search.css';
 
 /* Footer Css */
 @import './ComponentsCss/Footer.css';

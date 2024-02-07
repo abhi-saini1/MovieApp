@@ -49,6 +49,7 @@ const Movies = () => {
       </Swiper>
 
       <Container className="section-wrapper">
+       
         <Row>
           {NowPlayingMovies.slice(0,visible).map((play, n) => (
             <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex" key={n}>

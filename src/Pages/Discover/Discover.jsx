@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import Search from '../../Components/Search';
+
 
 const Discover = () => {
     const {tvseriesmovies,upcomingVisible,upcomingHandle} = useGlobalContext()
@@ -52,9 +52,7 @@ const Discover = () => {
             
 
       <Container className="section-wrapper">
-        <Row>
-          <Search/>
-        </Row>
+        
         <Row>
           {tvseriesmovies.slice(0,upcomingVisible).map((tv, n) => (
             <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex" key={n}>

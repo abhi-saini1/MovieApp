@@ -76,7 +76,7 @@ const MovieProvider = ({ children }) => {
   const [upcomingVisible,setUpcomingVisible] = useState(12)
 
   const fetchTvSeriesmovies = async () =>{
-    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_API_KEY}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?&api_key=${import.meta.env.VITE_API_KEY}`);
     const TvseriesData = await response.json();
     // console.log(discoverData);
     setTvSeriesMovies(TvseriesData.results);
@@ -89,7 +89,21 @@ const MovieProvider = ({ children }) => {
     setUpcomingVisible((prevValue)=> prevValue + 4)
   }
 
+  // Search Movies
+  const [searchMovies,setSearchMovies] = useState([]);
+  const [searchQuery,setSearchQuery] = useState('Avengers');
 
+  const fetchSearchMovies = async ()=>{
+    
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API_KEY}&query=${searchQuery}`)
+      const data = await response.json();
+      setSearchMovies(data.results)
+
+    
+  }
+  useEffect(()=>{
+    fetchSearchMovies()
+  },[])
   return (
     <MovieContext.Provider
       value={{
@@ -105,7 +119,7 @@ const MovieProvider = ({ children }) => {
         tvseriesmovies,
         upcomingVisible,
         upcomingHandle,
-        
+        searchMovies,searchQuery,setSearchQuery,fetchSearchMovies
       }}
     >
       {children}

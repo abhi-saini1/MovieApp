@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Container,Navbar,Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FaSearch } from "react-icons/fa";
-import Search from './Search';
 
 const Header = () => {
   const [headerFixed, setHeaderFixed] = useState(false)
@@ -27,6 +26,9 @@ const Header = () => {
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
             <Nav.Link as={Link} to='/discover'>Discover</Nav.Link>
             <Nav.Link as={Link} to='/movies'>Movies</Nav.Link>
+            <Nav.Link as={Link} to='/search'>
+              <FaSearch/>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
