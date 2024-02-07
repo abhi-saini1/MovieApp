@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useGlobalContext } from '../Context/Context'
 import { Link } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
@@ -9,7 +9,7 @@ const MovieCard = () => {
   return (
     <>
         {searchMovies ? searchMovies.map((search) => (
-            <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex" key={search.id}>
+            <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex mt-5" key={search.id}>
              <Link to={`/moviesdetail/${search.id}`}>
              <div className="movie-card">
                 <img

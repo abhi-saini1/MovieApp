@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import {  Navigation, Autoplay } from "swiper/modules";
 import { useGlobalContext } from "../../Context/Context";
 import { Link } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
@@ -15,16 +14,14 @@ const Movies = () => {
   return (
     <div className="movies-section">
       <Swiper
-        pagination={{
-          type: "fraction",
-        }}
+        
         navigation={true}
         loop={true}
         autoplay={{
           delay: 1000,
           disableOnInteraction: true,
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[ Navigation, Autoplay]}
         className="mySwiper"
       >
         {NowPlayingMovies &&

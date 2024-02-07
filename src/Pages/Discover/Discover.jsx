@@ -6,43 +6,41 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import {  Navigation, Autoplay } from "swiper/modules";
 
 
 const Discover = () => {
-    const {tvseriesmovies,upcomingVisible,upcomingHandle} = useGlobalContext()
-    console.log(tvseriesmovies);
+    // const {tvseriesmovies,upcomingVisible,upcomingHandle} = useGlobalContext()
+    const {discoverMovies,discoverVisible,discoverHandle} = useGlobalContext()
+    console.log(discoverMovies);
   return (
     <div className='discover-section'>
         <Swiper
-        pagination={{
-          type: "fraction",
-        }}
+       
         navigation={true}
         loop={true}
         autoplay={{
           delay: 1000,
           disableOnInteraction: true,
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[ Navigation, Autoplay]}
         className="mySwiper"
       >
-        {tvseriesmovies &&
-          tvseriesmovies.map((series, s) => (
-            <SwiperSlide key={s}>
+        {discoverMovies &&
+          discoverMovies.map((discover, d) => (
+            <SwiperSlide key={d.id}>
               <div className="discover-banner">
-                <Link to={`/moviesdetail/${series.id}`}>
+                <Link to={`/moviesdetail/${discover.id}`}>
                   <img
-                    src={`https://image.tmdb.org/t/p/original/${series.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/original/${discover.backdrop_path}`}
                     alt=""
                   />
                   <div className="discover-content">
-                    <h4>{series.title}</h4>
-                    <h6>{series.release_date}</h6>
+                    <h4>{discover.title}</h4>
+                    <h6>{discover.release_date}</h6>
 
-                    <p>{series.overview}</p>
+                    <p>{discover.overview}</p>
                   </div>
                 </Link>
               </div>
@@ -54,25 +52,25 @@ const Discover = () => {
       <Container className="section-wrapper">
         
         <Row>
-          {tvseriesmovies.slice(0,upcomingVisible).map((tv, n) => (
-            <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex" key={n}>
-             <Link to={`/moviesdetail/${tv.id}`}>
+          {discoverMovies.slice(0,discoverVisible).map((dmovie) => (
+            <div className="col-lg-3 col-sm-6 aligin-items-center justify-content-center d-flex" key={dmovie.id}>
+             <Link to={`/moviesdetail/${dmovie.id}`}>
              <div className="discover-card">
                 <img
-                  src={`https://image.tmdb.org/t/p/original${tv.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/original${dmovie.poster_path}`}
                   className="img-fluid"
                   alt=""
                 />
                 <div className="discover-overlay">
-                    <h5>{tv.title}</h5>
+                    <h5>{dmovie.title}</h5>
                     <div className="discover-runtime">
-                        {tv.release_date}
-                        <span className="rating">{tv.vote_average}
+                        {dmovie.release_date}
+                        <span className="rating">{dmovie.vote_average}
                         <FaStar/>
                         </span>
                     </div>
                     <div className="discover-description">
-                        {tv ? tv.overview.slice(0,100)+"...": ""}
+                        {dmovie ? dmovie.overview.slice(0,100)+"...": ""}
                     </div>
                 </div>
               </div>
@@ -84,7 +82,7 @@ const Discover = () => {
         </Row>
         <Row>
             <div className="col-lg-12 text-center">
-            <button className="view-more" onClick={upcomingHandle}>View More</button>
+            <button className="view-more" onClick={discoverHandle}>View More</button>
             </div>
         </Row>
       </Container>

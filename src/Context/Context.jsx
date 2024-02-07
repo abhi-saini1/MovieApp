@@ -72,21 +72,21 @@ const MovieProvider = ({ children }) => {
   };
 
   // Upcoming movies
-  const [tvseriesmovies, setTvSeriesMovies] =useState([]);
-  const [upcomingVisible,setUpcomingVisible] = useState(12)
+  const [discoverMovies, setDiscoverMovies] =useState([]);
+  const [discoverVisible,setDiscoverVisible] = useState(12)
 
-  const fetchTvSeriesmovies = async () =>{
+  const fetchDiscovermovies = async () =>{
     const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?&api_key=${import.meta.env.VITE_API_KEY}`);
-    const TvseriesData = await response.json();
+    const discoverData = await response.json();
     // console.log(discoverData);
-    setTvSeriesMovies(TvseriesData.results);
+    setDiscoverMovies(discoverData.results);
   }
   useEffect(()=>(
-    fetchTvSeriesmovies()
+    fetchDiscovermovies()
   ),[])
 
-  const upcomingHandle = ()=>{
-    setUpcomingVisible((prevValue)=> prevValue + 4)
+  const discoverHandle = ()=>{
+    setDiscoverVisible((prevValue)=> prevValue + 4)
   }
 
   // Search Movies
@@ -115,10 +115,9 @@ const MovieProvider = ({ children }) => {
         previousPage,
         NowPlayingMovies,
         handleSeeMore,
-        visible,
-        tvseriesmovies,
-        upcomingVisible,
-        upcomingHandle,
+        discoverMovies,
+        discoverVisible,
+        discoverHandle,
         searchMovies,searchQuery,setSearchQuery,fetchSearchMovies
       }}
     >

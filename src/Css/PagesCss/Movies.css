@@ -45,6 +45,11 @@
   text-align: left;
   width: 50%;
 }
+.swiper-button-prev, 
+.swiper-button-next{
+  color: var(--white-color);
+}
+
 
 .movies-section .nowplaying-card {
   display: inline-block;

@@ -11,7 +11,7 @@ const Search = () => {
     }
     const handleSubmit = (e)=>{
         e.preventDefault();
-        fetchSearchMovies()
+        fetchSearchMovies();
     }
   return (
     <div className='search-section'>
