@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
+
+
 const MovieContext = createContext();
 
 
@@ -9,6 +11,7 @@ const MovieProvider = ({ children }) => {
   // Trending Movie
   const [Trendingmovie, setTrendingMovie] = useState([]);
 
+
   const fetchTrending = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${
       import.meta.env.VITE_API_KEY
@@ -16,6 +19,7 @@ const MovieProvider = ({ children }) => {
     const data = await response.json();
     // console.log(data);
     setTrendingMovie(data.results);
+    
   };
   useEffect(() => {
     fetchTrending();
@@ -60,7 +64,7 @@ const MovieProvider = ({ children }) => {
       }`
     );
     const nowplaydata = await response.json();
-    console.log(nowplaydata);
+    // console.log(nowplaydata);
     setNowPlayingMovies(nowplaydata.results);
   };
   useEffect(() => {
@@ -92,9 +96,10 @@ const MovieProvider = ({ children }) => {
   // Search Movies
   const [searchMovies,setSearchMovies] = useState([]);
   const [searchQuery,setSearchQuery] = useState('Avengers');
+ 
 
   const fetchSearchMovies = async ()=>{
-    
+     
       const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API_KEY}&query=${searchQuery}`)
       const data = await response.json();
       setSearchMovies(data.results)
@@ -102,8 +107,11 @@ const MovieProvider = ({ children }) => {
     
   }
   useEffect(()=>{
-    fetchSearchMovies()
-  },[])
+    let timeout = setTimeout(()=>{
+      fetchSearchMovies();
+    },800)
+    return() => clearTimeout(timeout)
+  },[searchQuery])
   return (
     <MovieContext.Provider
       value={{
@@ -118,7 +126,7 @@ const MovieProvider = ({ children }) => {
         discoverMovies,
         discoverVisible,
         discoverHandle,
-        searchMovies,searchQuery,setSearchQuery,fetchSearchMovies
+        searchMovies,searchQuery,setSearchQuery,fetchSearchMovies,
       }}
     >
       {children}

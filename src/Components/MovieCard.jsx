@@ -5,7 +5,9 @@ import { FaStar } from "react-icons/fa";
 
 const MovieCard = () => {
     const{searchMovies} = useGlobalContext()
-    console.log(searchMovies)
+    // console.log(searchMovies)
+
+    
   return (
     <>
         {searchMovies ? searchMovies.map((search) => (

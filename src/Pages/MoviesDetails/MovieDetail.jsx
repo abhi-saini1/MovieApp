@@ -5,7 +5,7 @@ import { MdFormatListBulletedAdd } from "react-icons/md";
 
 const MovieDetail = () => {
     const [currentMovieDetail,setCurrentMovieDetail] = useState([]);
-    const [wishlist,setWishList] = useState([])
+    // const [wishlist,setWishList] = useState([])
     const {id} = useParams();
     console.log(id);
 
@@ -53,7 +53,7 @@ const MovieDetail = () => {
                                             <div className='movie_description'>
                                                 <div className='synopsis'>Synopsis</div>
                                                 <div className='synopsis-text'>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
-                                            
+                                                
                                             </div>
                                         </div>
                                 </div>
